@@ -4,12 +4,13 @@ defmodule SupSample.Application do
   @moduledoc false
 
   use Application
+  alias SupSample.MyServer
 
   @impl true
   def start(_type, _args) do
     children = [
       # Starts a worker by calling: SupSample.Worker.start_link(arg)
-      # {SupSample.Worker, arg}
+      {MyServer, []}
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
